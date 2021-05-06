@@ -1,0 +1,30 @@
+<%- include('header'); -%>
+<body>
+    
+    <div class="title" id="titlez">
+        
+        <h1><%=title%></h1>
+    </div>
+    <div class="box" id="heading">
+        <h1><%=whatd%></h1>
+    </div>
+ 
+    <div class="box">
+        <form class="delete" action="/delete" method="post">
+        <!-- var ari=; -->
+       <% for(var i = 0; i <addme.length;++i){    %>
+    <div class="item">
+            <input type="checkbox" onChange="this.form.submit()" name="checkbox" value=<%=addme[i].id%>>
+            <p> <%= addme[i].name %> </p>
+    </div>
+       <% } %>
+       <input type="hidden" name="listname" value=<%=title%>></input>
+    </form>
+    <form class="item" action="/" method="post">
+        <input type="text" name="input" placeholder="New Task">
+        <button type="submit" name="button" value="<%= title %>" >+</button>
+    </form>
+    </div>
+  
+<%- include('footer'); -%>
+   
