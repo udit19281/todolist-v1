@@ -8,7 +8,7 @@ const result = dotenv.config()
 if (result.error) {
   throw result.error
 }
-const pass=result.parsed.PASS
+const pass=process.env.PASS
 app.set("view engine", "ejs");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
